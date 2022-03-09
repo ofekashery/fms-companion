@@ -1,0 +1,22 @@
+{
+  "name": "fms-websocket-tunnel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FIRSTIsrael/fms-websocket-tunnel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FIRSTIsrael/fms-websocket-tunnel/issues"
+  },
+  "homepage": "https://github.com/FIRSTIsrael/fms-websocket-tunnel#readme",
+  "dependencies": {
+    "ws": "^8.5.0"
+  }
+}
