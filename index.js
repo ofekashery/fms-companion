@@ -1,6 +1,6 @@
-const { WebSocketServer } = require("ws");
+const WebSocket = require("ws");
 
-const wss = new WebSocketServer({
+const wss = new WebSocket.WebSocketServer({
   port: 3323,
 });
 
