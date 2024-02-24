@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>FMS Companion Setup</title>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Inter, sans-serif;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 2rem;
+        --accent-color: #6b21a8;
+      }
+      header {
+        font-size: 1.125rem;
+        font-weight: 700;
+        padding: 1.5rem 2rem;
+        border-radius: 0.75rem;
+        color: #fff;
+        background: var(--accent-color);
+      }
+      .scene__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        margin: 1rem 0;
+        gap: 2rem;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .scene__name {
+        display: block;
+        font-weight: 600;
+      }
+      .scene__description {
+        font-size: 0.875rem;
+        color: #6b7280;
+      }
+      .scene__input {
+        width: 5rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        border: none;
+        background-color: #f9fafb;
+        box-shadow: #fff 0px 0px 0px 0px inset, #d1d5db 0px 0px 0px 1px inset,
+          rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+      }
+      .actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+      .actions button {
+        padding: 0.75rem 1.25rem;
+        border: none;
+        border-radius: 0.5rem;
+        background-color: var(--accent-color);
+        color: #fff;
+        font-weight: 500;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>FMS Companion Setup</header>
+    <form method="POST">
+      <% for (let scene of scenes) { %>
+      <div class="scene__container">
+        <div>
+          <span class="scene__name"><%= scene.name %></span>
+          <span class="scene__description"><%= scene.description %></span>
+        </div>
+        <div>
+          <input
+            type="text"
+            name="<%= scene.name %>"
+            class="scene__input"
+            pattern="\d+\.\d+"
+            placeholder="Button Id"
+            value="<%= values[scene.name] %>"
+          />
+        </div>
+      </div>
+      <% } %>
+      <div class="actions">
+        <button type="submit">Save</button>
+      </div>
+    </form>
+  </body>
+</html>
