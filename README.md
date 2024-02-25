@@ -25,12 +25,13 @@ npm run proxy
 To connect the FMS using proxy server at `ws://localhost:1234` with the Companion app at `localhost:8888`, run the following command:
 
 ```bash
-npm run start -w ws://localhost:1234 -c localhost:8888
+npm start -- -w ws://localhost:1234 -c localhost:8888
 ```
 
 ## Configuration
 
 Once the server is running, you can access the configuration page at `http://localhost:8081`. The configuration page allows you to set the Companion button IDs for each FMS state.
+
 The button IDs can found in the Companion app, on the topbar of each button, and are in the format of `page.button` (e.g. `1.2` or `1.16`).
 
 ## Scenes
